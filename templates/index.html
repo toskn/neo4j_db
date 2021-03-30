@@ -24,7 +24,7 @@
       <input type="text" class="form-control" name="add_node-meaning_id" placeholder="Id">
     </div>
     <div class="col-auto">
-      <input type="text" class="form-control" name="add_node-meaning_top" placeholder="Топ 5">
+      <input type="text" class="form-control" name="add_node-meaning_Top5" placeholder="Топ 5">
     </div>
     <div class="col-auto">
       <button type="submit" class="btn btn-warning">Добавить узел Смысл</button>
@@ -32,20 +32,20 @@
   </form>
   <form class="form-group row m-3 align-items-center">
     <div class="col-2">
-      <input type="text" class="form-control" name="add_rel_1" placeholder="Узел 1">
+      <input type="text" class="form-control" name="add_rel_source" placeholder="Узел 1">
     </div>
     <div class="col-auto">
       <select class="form-select" name="add_rel_type">
-        <option>Имеет значение</option>
-        <option>Гипоним</option>
+        <option>HAS_MEANING</option>
+        <option>IS_HYPONYM_OF</option>
       </select>
     </div>
     <div class="col-2">
-      <input type="text" class="form-control" name="add_rel_2" placeholder="Узел 2">
+      <input type="text" class="form-control" name="add_rel_target" placeholder="Узел 2">
     </div>
     <div class="col-auto">
       <select class="form-select" name="add_rel_prop">
-        <option>Частота</option>
+        <option>freq</option>
       </select>
     </div>
     <div class="col-1">
@@ -58,8 +58,8 @@
   <form class="form-group row m-3 align-items-center">
     <div class="col-auto">
       <select class="form-select" name="update_node_type">
-        <option>Слово</option>
-        <option>Смысл</option>
+        <option>Word</option>
+        <option>Meaning</option>
       </select>
     </div>
     <div class="col-auto">
@@ -67,8 +67,10 @@
     </div>
     <div class="col-auto">
       <select class="form-select" name="update_node_prop">
-        <option>Лемма</option>
-        <option>Часть речи</option>
+        <option>lemma</option>
+        <option>pos</option>
+        <option>id</option>
+        <option>Top5</option>
       </select>
     </div>
     <div class="col-auto">
@@ -80,13 +82,22 @@
   </form>
   <form class="form-group row m-3 align-items-center">
     <div class="col-auto">
+      <select class="form-select" name="del_node_type">
+        <option>Word</option>
+        <option>Meaning</option>
+      </select>
+    </div>
+    <div class="col-auto">
       <input type="text" class="form-control" name="del_node_value" placeholder="Узел">
     </div>
     <div class="col-auto">
-      <input type="text" class="form-control" name="del_node_prop" placeholder="Параметр">
-    </div>
-    <div class="col-auto">
-      <input type="text" class="form-control" name="del_node_rel" placeholder="Отношение">
+      <select class="form-select" name="del_node_prop">
+        <option>_</option>
+        <option>lemma</option>
+        <option>pos</option>
+        <option>id</option>
+        <option>Top5</option>
+      </select>
     </div>
     <div class="col-auto">
       <button type="submit" class="btn btn-danger">Удалить</button>
@@ -95,22 +106,35 @@
   <form class="form-group row m-3 align-items-center">
     <div class="col-auto">
       <select class="form-select" name="search_node_type">
-        <option>Слово</option>
-        <option>Смысл</option>
+        <option>Word</option>
+        <option>Meaning</option>
       </select>
     </div>
     <div class="col-auto">
-      <input type="text" class="form-control" name="search_node_prop" placeholder="Параметр">
+      <select class="form-select" name="search_node_prop">
+        <option>lemma</option>
+        <option>pos</option>
+        <option>id</option>
+        <option>Top5</option>
+      </select>
     </div>
     <div class="col-auto">
       <input type="text" class="form-control" name="search_node_prop-value" placeholder="Значение параметра">
+    </div>
+    <div class="col-auto">
+      <select class="form-select" name="search_node_limit">
+        <option>no limit</option>
+        <option>5</option>
+        <option>10</option>
+        <option>50</option>
+      </select>
     </div>
     <div class="col-auto">
       <button type="submit" class="btn btn-info">Искать</button>
     </div>
   </form>
   <div class="row m-3">
-    {{ result }}
+    <code>{{ result }}</code>
   </div>
 </div>
 </body>
