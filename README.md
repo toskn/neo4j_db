@@ -1,1 +1,1 @@
-# neo4j_db
+# Neo4j-based Graph Database of WordNet Type
