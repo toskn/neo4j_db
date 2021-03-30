@@ -1,4 +1,4 @@
-# Neo4j-based Graph Database of WordNet Type
+# Neo4j-based Graph Database of WordNet Type, built on distributional data from [Russian Distributional Thesaurus](https://nlpub.ru/Russian_Distributional_Thesaurus)
 In this project for the ["Databases 2"](https://www.hse.ru/ba/ling/courses/339492987.html) course we, as a team of students:
 - parced the information about frequency of hyponimic relations between a set of words
 - parced the connections between the meanings of the same set of words
