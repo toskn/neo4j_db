@@ -1,5 +1,4 @@
-import os
-from flask import Flask, request, render_template, Response
+from flask import Flask, request, render_template
 from collections import defaultdict
 from neo4j import GraphDatabase, basic_auth
 import json
@@ -136,7 +135,4 @@ if __name__ == '__main__':
         auth=basic_auth("neo4j", "petroleum-honor-flare"))
     global session
     session = driver.session()
-    # un comment if move to heroku
-    # port = int(os.environ.get("PORT", 5000))
-    # app.run(host='0.0.0.0', port=port, debug=True)
     app.run(debug=True)
